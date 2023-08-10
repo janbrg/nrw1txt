@@ -26,11 +26,13 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     white-space: pre-line;
     text-align: center; /* Zentrieren des Texts */
+    flex: 1; /* Flexibel wachsen, ohne das Logo zu beeinflussen */
   }
 
   #logo {
     height: 30px; /* Verkleinern des Logos */
     margin-top: 20px;
+    margin-bottom: 20px; /* Abstand nach unten */
   }
 </style>
 </head>
@@ -43,6 +45,11 @@
 <script>
   const fullscreenText = document.getElementById('fullscreen-text');
   const logo = document.getElementById('logo');
+
+  window.addEventListener('message', event => {
+    const receivedMessage = event.data;
+    fullscreenText.textContent = receivedMessage || 'Kein Text vorhanden.';
+  });
 
   const updateTextFromStorage = () => {
     const enteredText = localStorage.getItem('enteredText');
