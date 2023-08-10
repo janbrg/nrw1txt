@@ -23,7 +23,7 @@
     padding: 10px;
   }
 
-  #submit-button {
+  #send-button {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #333;
@@ -44,15 +44,15 @@
 </head>
 <body>
 <textarea id="text-input" placeholder="Text eingeben"></textarea>
-<button id="submit-button">Text anzeigen</button>
+<button id="send-button">Text senden</button>
 <button id="clear-button">Clear</button>
 
 <script>
-  const submitButton = document.getElementById('submit-button');
+  const sendButton = document.getElementById('send-button');
   const clearButton = document.getElementById('clear-button');
   const textInput = document.getElementById('text-input');
 
-  submitButton.addEventListener('click', () => {
+  sendButton.addEventListener('click', () => {
     const enteredText = textInput.value;
     // Speichere den eingegebenen Text im Local Storage
     localStorage.setItem('enteredText', enteredText);
@@ -61,7 +61,8 @@
   });
 
   clearButton.addEventListener('click', () => {
-    textInput.value = 'NRW1 Produktion';
+    textInput.value = '';
+    sendMessageToAnzeigePage('');
   });
 
   function sendMessageToAnzeigePage(message) {
