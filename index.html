@@ -31,14 +31,25 @@
     border: none;
     cursor: pointer;
   }
+
+  #clear-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
 <textarea id="text-input" placeholder="Text eingeben"></textarea>
 <button id="submit-button">Text anzeigen</button>
+<button id="clear-button">Clear</button>
 
 <script>
   const submitButton = document.getElementById('submit-button');
+  const clearButton = document.getElementById('clear-button');
   const textInput = document.getElementById('text-input');
 
   submitButton.addEventListener('click', () => {
@@ -47,6 +58,10 @@
     localStorage.setItem('enteredText', enteredText);
     // Sende den eingegebenen Text an die Anzeigeseite
     sendMessageToAnzeigePage(enteredText);
+  });
+
+  clearButton.addEventListener('click', () => {
+    textInput.value = 'NRW1 Produktion';
   });
 
   function sendMessageToAnzeigePage(message) {
