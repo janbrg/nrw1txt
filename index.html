@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vollbild Sprecher:innen-Texte</title>
+<title>Text eingeben</title>
 <style>
   body {
     margin: 0;
@@ -17,22 +17,12 @@
     font-family: Arial, sans-serif;
   }
   
-  #fullscreen-text {
-    font-size: 3em;
-    text-align: center;
-    padding: 20px;
-    background-color: white;
-    border: 2px solid #333;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-
   #text-input {
-    margin-top: 20px;
-    padding: 10px;
     font-size: 1em;
+    padding: 10px;
   }
 
-  #update-button {
+  #submit-button {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #333;
@@ -43,19 +33,18 @@
 </style>
 </head>
 <body>
-<div id="fullscreen-text">
-  Hier kommt der Text der Sprecher:innen hin.
-</div>
-<input type="text" id="text-input" placeholder="Neuer Text eingeben">
-<button id="update-button">Text aktualisieren</button>
+<input type="text" id="text-input" placeholder="Text eingeben">
+<button id="submit-button">Text anzeigen</button>
 
 <script>
-  const fullscreenText = document.getElementById('fullscreen-text');
-  const textInput = document.getElementById('text-input');
-  const updateButton = document.getElementById('update-button');
+  const submitButton = document.getElementById('submit-button');
 
-  updateButton.addEventListener('click', () => {
-    fullscreenText.textContent = textInput.value;
+  submitButton.addEventListener('click', () => {
+    const textInput = document.getElementById('text-input').value;
+    // Speichere den eingegebenen Text im Local Storage
+    localStorage.setItem('enteredText', textInput);
+    // Leite zur zweiten Seite weiter
+    window.location.href = 'anzeige.html';
   });
 </script>
 </body>
