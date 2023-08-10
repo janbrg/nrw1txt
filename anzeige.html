@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anzeige des Textes</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #fullscreen-text {
+    font-size: 3em;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  #logo {
+    margin-top: 20px;
+    height: 200px;
+  }
+</style>
+</head>
+<body>
+<div id="fullscreen-text">
+  Text wird hier angezeigt.
+</div>
+<img id="logo" src="nrw1.png" alt="NRW1 Logo">
+
+<script>
+  const fullscreenText = document.getElementById('fullscreen-text');
+  const logo = document.getElementById('logo');
+
+  // Hole den gespeicherten Text aus dem Local Storage
+  const enteredText = localStorage.getItem('enteredText');
+  fullscreenText.textContent = enteredText || 'Kein Text vorhanden.';
+</script>
+</body>
+</html>
