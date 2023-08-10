@@ -18,7 +18,8 @@
   }
   
   #text-input {
-    font-size: 1em;
+    width: 80%;
+    height: 150px;
     padding: 10px;
   }
 
@@ -33,7 +34,7 @@
 </style>
 </head>
 <body>
-<input type="text" id="text-input" placeholder="Text eingeben">
+<textarea id="text-input" placeholder="Text eingeben"></textarea>
 <button id="submit-button">Text anzeigen</button>
 
 <script>
@@ -43,8 +44,8 @@
     const textInput = document.getElementById('text-input').value;
     // Speichere den eingegebenen Text im Local Storage
     localStorage.setItem('enteredText', textInput);
-    // Leite zur zweiten Seite weiter
-    window.location.href = 'anzeige.html';
+    // Öffne ein neues Fenster oder Tab für die Anzeigeseite
+    window.open('anzeige.html', '_blank');
   });
 </script>
 </body>
