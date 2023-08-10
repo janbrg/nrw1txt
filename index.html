@@ -40,16 +40,27 @@
     border: none;
     cursor: pointer;
   }
+
+  #open-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
 <textarea id="text-input" placeholder="Text eingeben"></textarea>
 <button id="send-button">Text senden</button>
 <button id="clear-button">Clear</button>
+<button id="open-button">Anzeige öffnen</button>
 
 <script>
   const sendButton = document.getElementById('send-button');
   const clearButton = document.getElementById('clear-button');
+  const openButton = document.getElementById('open-button');
   const textInput = document.getElementById('text-input');
 
   sendButton.addEventListener('click', () => {
@@ -62,7 +73,10 @@
 
   clearButton.addEventListener('click', () => {
     textInput.value = '';
-    sendMessageToAnzeigePage('');
+  });
+
+  openButton.addEventListener('click', () => {
+    window.open('anzeige.html', 'Anzeigeseite', 'width=800,height=600');
   });
 
   function sendMessageToAnzeigePage(message) {
