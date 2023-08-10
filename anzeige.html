@@ -12,9 +12,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    position: relative; /* Hinzugefügt für relative Positionierung */
+    min-height: 100vh;
   }
   
   #fullscreen-text-container {
@@ -28,9 +29,15 @@
     margin-bottom: 20px;
   }
 
+  #fullscreen-text {
+    font-size: 1.5em;
+    white-space: pre-line;
+  }
+
   #logo {
     height: 30px; /* Verkleinern des Logos */
-    margin-top: 20px;
+    position: absolute; /* Absolute Positionierung */
+    bottom: 20px; /* Abstand vom unteren Rand */
   }
 </style>
 </head>
