@@ -17,28 +17,28 @@
     font-family: Arial, sans-serif;
   }
   
-  #fullscreen-text {
-    font-size: 1.5em;
+  #fullscreen-text-container {
     max-width: 80%;
+    width: 800px; /* Begrenzen der Breite des Textcontainers */
     padding: 20px;
     background-color: white;
     border: 2px solid #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    white-space: pre-line;
     text-align: center; /* Zentrieren des Texts */
-    flex: 1; /* Flexibel wachsen, ohne das Logo zu beeinflussen */
+    margin-bottom: 20px;
   }
 
   #logo {
     height: 30px; /* Verkleinern des Logos */
     margin-top: 20px;
-    margin-bottom: 20px; /* Abstand nach unten */
   }
 </style>
 </head>
 <body>
-<div id="fullscreen-text">
-  Text wird hier angezeigt.
+<div id="fullscreen-text-container">
+  <div id="fullscreen-text">
+    Text wird hier angezeigt.
+  </div>
 </div>
 <img id="logo" src="nrw1.png" alt="NRW1 Logo">
 
