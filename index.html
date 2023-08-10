@@ -44,8 +44,8 @@
     const textInput = document.getElementById('text-input').value;
     // Speichere den eingegebenen Text im Local Storage
     localStorage.setItem('enteredText', textInput);
-    // Öffne ein neues Fenster oder Tab für die Anzeigeseite
-    window.open('anzeige.html', '_blank');
+    // Öffne die Anzeigeseite im aktuellen Fenster
+    window.location.href = 'anzeige.html';
   });
 </script>
 </body>
