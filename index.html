@@ -39,14 +39,21 @@
 
 <script>
   const submitButton = document.getElementById('submit-button');
+  const textInput = document.getElementById('text-input');
 
   submitButton.addEventListener('click', () => {
-    const textInput = document.getElementById('text-input').value;
+    const enteredText = textInput.value;
     // Speichere den eingegebenen Text im Local Storage
-    localStorage.setItem('enteredText', textInput);
-    // Öffne die Anzeigeseite im aktuellen Fenster
-    window.location.href = 'anzeige.html';
+    localStorage.setItem('enteredText', enteredText);
+    // Sende den eingegebenen Text an die Anzeigeseite
+    sendMessageToAnzeigePage(enteredText);
   });
+
+  function sendMessageToAnzeigePage(message) {
+    if (window.opener) {
+      window.opener.postMessage(message, window.location.origin);
+    }
+  }
 </script>
 </body>
 </html>
